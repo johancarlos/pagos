@@ -1,0 +1,109 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<nav class="nav-extended " >
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Sistema de Pago</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a href="sass.html">contacto</a></li>
+      <li><a href="badges.html">SingUp</a></li>
+      <li><a href="collapsible.html">Signin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<h1>Empleados</h1>
+
+<p id="notice"><%= notice %></p>
+
+
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Ci</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Telefono</th>
+        <th>Profesion</th>
+        <th>Numerocuenta</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @empleados.each do |empleado| %>
+        <tr>
+          <td><%= empleado.ci %></td>
+          <td><%= empleado.nombre %></td>
+          <td><%= empleado.apellidos %></td>
+          <td><%= empleado.telefono %></td>
+          <td><%= empleado.profesion %></td>
+          <td><%= empleado.numeroCuenta %></td>
+          <td><%= link_to 'Show', empleado %></td>
+          <td><%= link_to 'Edit', edit_empleado_path(empleado) %></td>
+          <td><%= link_to 'Destroy', empleado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+  <div class="fixed-action-btn vertical">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red"><i class="material-icons">delete</i></a></li>
+      <li><a class="btn-floating yellow darken-1"><i class="material-icons">edit</i></a></li>
+      <li><a class="btn-floating green"><i class="material-icons">add</i></a></li>
+    </ul>
+  </div>
+
+
+<br>
+
+<%= link_to 'New Empleado', new_empleado_path%>
+
+
+<!--
+<ul id="slide-out" class="side-nav">
+    <li><div class="userView">
+      <div class="background">
+        <img src="https://image.freepik.com/free-vector/blue-and-green-wavy-background_1035-7430.jpg">
+      </div>
+      <a href="#!user"><img class="circle" src="http://www.sbz.org.br/instituicao/equipe_tecnica/profile.png"></a>
+      <a href="#!name"><span class="white-text name">JUAN PEREZ</span></a>
+      <a href="#!email"><span class="white-text email">mymail@gmail.com</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">Cargo</i>Developer</a></li>
+    <li><a href="#!">Empleado Fijo</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Asistencia</a></li>
+    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+  </ul>
+  <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+
+
+<script>
+// Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
+
+
+  $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 300
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+      draggable: true // Choose whether you can drag to open on touch screens
+    }
+  );
+
+
+  // Show sideNav
+ $('.button-collapse').sideNav('show');
+ // Hide sideNav
+ $('.button-collapse').sideNav('hide');
+ // Destroy sideNav
+ $('.button-collapse').sideNav('destroy');
+  </script>
+-->
